@@ -8,24 +8,44 @@ package org.bakkes.fuzzy;
  */
 public class FuzzySet implements IFuzzyTerm{
 
-	float from = 0;
-	float to = 100;
+	private float from = 0;
+	private float to = 100;
 	/**
 	 * x is the position in the chart where the Y value is retrieved from
 	 */
-	float x = 0;
+	private float x = 0;
 
 	@Override
 	public float getValue() {
-		float halfDimension = (to - from) /2;
-		if(x < halfDimension){
-			return x / halfDimension;
+		float halfDimension = (getTo() - getFrom()) /2;
+		if(getX() < halfDimension){
+			return getX() / halfDimension;
 		}
-		return (halfDimension - x) / halfDimension;
+		return (halfDimension - getX()) / halfDimension;
 	}
 	
-	void setX(float to){
-		x = to;
+	public float getFrom() {
+		return from;
+	}
+
+	public void setFrom(float from) {
+		this.from = from;
+	}
+
+	public float getTo() {
+		return to;
+	}
+
+	public void setTo(float to) {
+		this.to = to;
+	}
+
+	float getX() {
+		return x;
+	}
+
+	void setX(float x) {
+		this.x = x;
 	}
 
 }
