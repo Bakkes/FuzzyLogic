@@ -6,7 +6,7 @@ import org.bakkes.fuzzy.FloatHelper;
 public class Triangle extends AFuzzySet {
 
 	public Triangle(float peak, float minOffset, float maxOffset) {
-		super(peak, minOffset, maxOffset);
+		super(peak,peak, minOffset, maxOffset);
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import org.bakkes.fuzzy.FloatHelper;
 
 public class RightShoulder extends AFuzzySet {
 	public RightShoulder(float peak, float minOffset, float maxOffset) {
-		super(peak,minOffset,maxOffset);
+		super(((peak+maxOffset) + peak)/2,peak,minOffset,maxOffset);
 	}
 
 

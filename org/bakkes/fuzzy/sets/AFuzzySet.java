@@ -7,12 +7,14 @@ public abstract class AFuzzySet implements IFuzzySet{
 	protected float maxOffset;
 
 	protected float value;
+	private float repValue;
 	
-	public AFuzzySet(float peak, float minOffset, float maxOffset) {
+	public AFuzzySet(float repVal, float peak, float minOffset, float maxOffset) {
 		clearValue();
 		this.peakPoint = peak;
 		this.minOffset = minOffset;
 		this.maxOffset = maxOffset;
+		repValue = repVal;
 	}
 
 	@Override
@@ -51,5 +53,10 @@ public abstract class AFuzzySet implements IFuzzySet{
 	public float getMax() {
 		// TODO Auto-generated method stub
 		return maxOffset;
+	}
+	@Override
+	public float getRepresentiveValue() {
+		// TODO Auto-generated method stub
+		return repValue;
 	}
 }

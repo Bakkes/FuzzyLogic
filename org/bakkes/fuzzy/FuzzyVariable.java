@@ -26,5 +26,46 @@ public class FuzzyVariable {
 
 	}
 	
+	void fuzzify(float val){
+		assert val > min && val < max;
+		for(IFuzzySet set : memberSets.values()){
+			set.setValue(set.calculateValue(val));
+		}
+	}
+	
+	float deFuzzifyMaxAv(){
+		float bottom = 0;
+		float top = 0;
+		for(IFuzzySet set: memberSets.values()){
+			
+			bottom += set.getValue();
+			top += set.getPeak() * set.getValue();
+		}
+		if(bottom == 0){
+			return 0;
+		}
+		return top/bottom;
+	}
+	float deFuzzifyCentroid(int samples){
+		
+		float stepSize = (max - min) / samples;
+		float totalArea = 0;
+		float sumOfMoments = 0;
+		
+		for(int sample = 1; sample < samples; ++sample){
+			
+			for(IFuzzySet set: memberSets.values()){
+				float position  = min + sample*stepSize;
+				float contribution = Math.min(set.calculateValue(position), set.getValue());
+				totalArea += contribution;
+				sumOfMoments += position * contribution;
+			}
+		}
+		if(totalArea == 0){
+			return 0;
+		}
+		return sumOfMoments/totalArea;
+	}
+	
 
 }

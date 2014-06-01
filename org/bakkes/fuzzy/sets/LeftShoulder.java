@@ -5,7 +5,7 @@ import org.bakkes.fuzzy.FloatHelper;
 public class LeftShoulder extends AFuzzySet {
 	
 	public LeftShoulder(float peak, float minOffset, float maxOffset) {
-		super(peak,minOffset,maxOffset);
+		super(((peak - minOffset) + peak)/2,peak,minOffset,maxOffset);
 	}
 
 
@@ -26,6 +26,8 @@ public class LeftShoulder extends AFuzzySet {
 		}
 		
 	}
+
+
 
 
 }

@@ -14,4 +14,5 @@ public interface IFuzzySet extends IFuzzyTerm{
 	public float getPeak();
 	public float getMin();
 	public float getMax();
+	public float getRepresentiveValue();
 }
