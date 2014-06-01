@@ -6,7 +6,7 @@ package org.bakkes.fuzzy;
  * @author jappie
  *
  */
-public abstract class FuzzySet implements IFuzzyTerm{
+public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 	private String name;
 
 	public String getName() {

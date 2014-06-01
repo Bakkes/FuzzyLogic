@@ -1,6 +1,6 @@
 package org.bakkes.fuzzy;
 
-public class LinearSet extends FuzzySet {
+public class LinearSet extends AFuzzySet {
 
 	private float value;
 	public LinearSet(float val){
