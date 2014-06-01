@@ -5,11 +5,12 @@ package org.bakkes.fuzzy.sets;
  * @author jappie
  *
  */
-public class LinearSet extends AFuzzySet {
+public class LinearSet extends FuzzySet {
 
 	private float value;
 	private float point;
-	public LinearSet(float pnt){
+	public LinearSet(float pnt) {
+		super(pnt);
 		value = 0;
 		point = pnt;
 	}

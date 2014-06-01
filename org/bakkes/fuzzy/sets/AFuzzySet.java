@@ -39,4 +39,5 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 	
 	public abstract float getPoint();
 	public abstract void setValue(float x);
+	public abstract float calculateValue(float val);
 }
