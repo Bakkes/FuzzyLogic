@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeSet;
 
@@ -26,9 +27,17 @@ public class FuzzyVariable {
 	
 	public void fuzzify(float x){
 		List<AFuzzySet> list = new LinkedList<>(sets);
+		ListIterator<AFuzzySet> it = list.listIterator();
+		while(it.hasNext()){
+			AFuzzySet set = it.next();
+			if(set.getValue() > x){
+				
+			}
+		}
 	}
 	
 	public float deFuzzifyCentroid(int numSamples) {
+
 		return 0f;
 	}
 	
