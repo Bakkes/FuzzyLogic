@@ -20,7 +20,6 @@ public abstract class FuzzyOperator extends AFuzzyTerm {
 	
 	@Override
 	public void clearValue() {
-		// TODO Auto-generated method stub
 		for(AFuzzyTerm term : terms) {
 			term.clearValue();
 		}
@@ -28,7 +27,6 @@ public abstract class FuzzyOperator extends AFuzzyTerm {
 
 	@Override
 	public void ORwithValue(float value) {
-		// TODO Auto-generated method stub
 		for(AFuzzyTerm term : terms) {
 			term.ORwithValue(value);
 		}
