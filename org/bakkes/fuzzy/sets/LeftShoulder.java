@@ -2,17 +2,10 @@ package org.bakkes.fuzzy.sets;
 
 import org.bakkes.fuzzy.FloatHelper;
 
-public class LeftShoulder extends FuzzySet {
-	private float peakPoint;
-	private float leftOffset;
-	private float rightOffset;
-
+public class LeftShoulder extends AFuzzySet {
 	
 	public LeftShoulder(float peak, float leftOffset, float rightOffset) {
-		super(((peak - leftOffset) + peak) / 2);
-		this.peakPoint = peak;
-		this.leftOffset = leftOffset;
-		this.rightOffset = rightOffset;
+		super(peak,leftOffset,rightOffset);
 	}
 
 
@@ -33,5 +26,4 @@ public class LeftShoulder extends FuzzySet {
 		}
 		
 	}
-
 }

@@ -5,17 +5,10 @@ package org.bakkes.fuzzy.sets;
  * @author jappie
  *
  */
-public class LinearSet extends FuzzySet {
+public class LinearSet extends AFuzzySet {
 
-	private float peakPoint;
-	private float leftOffset;
-	private float rightOffset;
-	
 	public LinearSet(float peak, float leftOffset, float rightOffset) {
-		super(peak);
-		this.peakPoint = peak;
-		this.leftOffset = leftOffset;
-		this.rightOffset = rightOffset;
+		super(peak,leftOffset,rightOffset);
 	}
 
 	@Override
@@ -26,5 +19,6 @@ public class LinearSet extends FuzzySet {
 			return 0f;
 		}
 	}
+
 
 }

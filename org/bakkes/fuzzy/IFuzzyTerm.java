@@ -1,6 +1,6 @@
 package org.bakkes.fuzzy;
 
-public interface IFuzzyTerm extends Comparable<IFuzzyTerm> {
+public interface IFuzzyTerm{
 	/**
 	 * @return the degree of membership
 	 */

@@ -28,7 +28,7 @@ public class FuzzyModule {
 		return variables.get(name);
 	}
 	
-	public void addRule(AFuzzyTerm condition, AFuzzyTerm consequence) {
+	public void addRule(IFuzzyTerm condition, IFuzzyTerm consequence) {
 		rules.add(new FuzzyRule(condition, consequence));
 	}
 	

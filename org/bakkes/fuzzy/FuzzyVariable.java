@@ -8,13 +8,13 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeSet;
 
-import org.bakkes.fuzzy.sets.AFuzzySet;
+import org.bakkes.fuzzy.sets.IFuzzySet;
 import org.bakkes.fuzzy.sets.LinearSet;
 
 
 public class FuzzyVariable {
 
-	Collection<AFuzzySet> sets;
+	Collection<IFuzzySet> sets;
 	public FuzzyVariable(){
 		// saves memory and no index acces is required
 		sets = new TreeSet<>();
@@ -22,20 +22,16 @@ public class FuzzyVariable {
 	
 	public void addSet(String name, float value){
 
-		LinearSet set = new LinearSet(value);
-		set.setName(name);
-
-		sets.add(set);
 	}
 	
 	public void fuzzify(float x){
 
 
 		// we want to find the 2 sets that are just bigger or smaller then the x
-		AFuzzySet bigger = null;
-		AFuzzySet smaller = null;
+		IFuzzySet bigger = null;
+		IFuzzySet smaller = null;
 
-		for(AFuzzySet set : sets){
+		for(IFuzzySet set : sets){
 			smaller = bigger;
 			bigger = set;
 			if(bigger.getValue() > x){

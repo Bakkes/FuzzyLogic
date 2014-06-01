@@ -1,43 +1,37 @@
 package org.bakkes.fuzzy.sets;
 
-import org.bakkes.fuzzy.AFuzzyTerm;
-import org.bakkes.fuzzy.IFuzzyTerm;
+public abstract class AFuzzySet implements IFuzzySet{
 
-/**
- * always a triangle
- * the max height of the triangle is always one
- * @author jappie
- *
- */
-public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
-	private String name;
+	protected float peakPoint;
+	protected float leftOffset;
+	protected float rightOffset;
+
+	protected float value;
 	
-	public String getName() {
-		return name;
+	public AFuzzySet(float peak, float leftOffset, float rightOffset) {
+		clearValue();
+		this.peakPoint = peak;
+		this.leftOffset = leftOffset;
+		this.rightOffset = rightOffset;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	@Override
-	public boolean equals(Object to){
-		if(! (to instanceof AFuzzySet)){
-			return false;
-		}
-		AFuzzySet target = (AFuzzySet) to;
-
-		if(!(target.getValue() == getValue())){
-			return false;
-		}
-		return true;
+	public void clearValue() {
+		value=0;
 	}
 	@Override
-	public int hashCode(){
-		return new Float(getValue() /3).hashCode();
+	public void setValue(float to){
+		value=to;
 	}
-	
-	public abstract float getPoint();
-	public abstract void setValue(float x);
-	public abstract float calculateValue(float val);
+	@Override
+	public float getValue() {
+		// TODO Auto-generated method stub
+		return value;
+	}
+	@Override
+	public void ORwithValue(float value) {
+		if(getValue() < value){
+			setValue(value);
+		}
+	}
 }

@@ -1,13 +1,13 @@
 package org.bakkes.fuzzy.hedges;
 
-import org.bakkes.fuzzy.AFuzzyTerm;
-import org.bakkes.fuzzy.sets.AFuzzySet;
+import org.bakkes.fuzzy.IFuzzyTerm;
+import org.bakkes.fuzzy.sets.IFuzzySet;
 
-public class FuzzyFairly extends AFuzzyTerm {
+public class FuzzyFairly implements IFuzzyTerm {
 
-	private AFuzzySet set;
+	private IFuzzySet set;
 	
-	public FuzzyFairly(AFuzzySet fuzzySet) {
+	public FuzzyFairly(IFuzzySet fuzzySet) {
 		this.set = fuzzySet;
 	}
 	
