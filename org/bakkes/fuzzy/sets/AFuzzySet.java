@@ -1,4 +1,7 @@
-package org.bakkes.fuzzy;
+package org.bakkes.fuzzy.sets;
+
+import org.bakkes.fuzzy.AFuzzyTerm;
+import org.bakkes.fuzzy.IFuzzyTerm;
 
 /**
  * always a triangle

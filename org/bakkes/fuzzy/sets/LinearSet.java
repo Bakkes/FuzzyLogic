@@ -1,4 +1,4 @@
-package org.bakkes.fuzzy;
+package org.bakkes.fuzzy.sets;
 
 /**
  * the range of this set is determined by the point of the other sets in fuzzy var

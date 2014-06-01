@@ -8,6 +8,9 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeSet;
 
+import org.bakkes.fuzzy.sets.AFuzzySet;
+import org.bakkes.fuzzy.sets.LinearSet;
+
 
 public class FuzzyVariable {
 
