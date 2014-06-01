@@ -27,5 +27,13 @@ public class FuzzyVariable {
 
 		return result;
 	}
+	
+	public float deFuzzifyCentroid(int numSamples) {
+		return 0f;
+	}
+	
+	public float deFuzzifyMaxAv() {
+		return 0f;
+	}
 
 }
