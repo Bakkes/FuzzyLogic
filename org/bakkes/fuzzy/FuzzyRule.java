@@ -13,12 +13,11 @@ public class FuzzyRule implements IFuzzyRule {
 	@Override
 	public void calculate() {
 		// TODO Auto-generated method stub
-		
+		consequence.ORwithValue(antecedent.getValue());
 	}
 
 	@Override
-	public void resetConfidence() {
-		// TODO Auto-generated method stub
-		
+	public void resetConfidenceOfConsequence() {
+		consequence.clearValue();
 	}
 }
