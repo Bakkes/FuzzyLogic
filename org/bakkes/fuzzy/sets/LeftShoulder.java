@@ -23,7 +23,7 @@ public class LeftShoulder extends FuzzySet {
 				(FloatHelper.areEqual(rightOffset, 0.0f) &&
 				FloatHelper.areEqual(peakPoint, val))) {
 			return 1.0f;
-		} else if((val > peakPoint && val < (peakPoint + rightOffset))) {
+		} else if(val >= peakPoint && val < (peakPoint + rightOffset)) {
 			float grad = 1.0f / -rightOffset;
 			return grad * (val - peakPoint) + 1.0f;
 		} else if(val < peakPoint && val >= (peakPoint - leftOffset)) {
