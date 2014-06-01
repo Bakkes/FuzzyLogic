@@ -2,6 +2,7 @@ package org.bakkes.fuzzy.sets;
 
 import org.bakkes.fuzzy.FloatHelper;
 
+//TODO: Check if triangle is equal to shoulder?
 public class Triangle extends FuzzySet {
 
 	private float peakPoint;

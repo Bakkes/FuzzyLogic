@@ -7,37 +7,25 @@ package org.bakkes.fuzzy.sets;
  */
 public class LinearSet extends FuzzySet {
 
-	private float value;
-	private float point;
-	public LinearSet(float pnt) {
-		super(pnt);
-		value = 0;
-		point = pnt;
+	private float peakPoint;
+	private float leftOffset;
+	private float rightOffset;
+	
+	public LinearSet(float peak, float leftOffset, float rightOffset) {
+		super(peak);
+		this.peakPoint = peak;
+		this.leftOffset = leftOffset;
+		this.rightOffset = rightOffset;
 	}
 
-	@Override
-	public float getValue() {
-		return value;
-	}
 
 	@Override
-	public float getPoint() {
-		return point;
-	}
-
-	@Override
-	public void setValue(float x) {
-		value = x;
-	}
-
-	@Override
-	public void clearValue() {
-		setValue(0);
-	}
-
-	@Override
-	public void ORwithValue(float value) {
-		setValue(getValue()+value);
+	public float calculateValue(float val) {
+		if(val >= (peakPoint - leftOffset) && val <= peakPoint + rightOffset) {
+			return 1.0f;
+		} else {
+			return 0f;
+		}
 	}
 
 }
