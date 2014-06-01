@@ -18,7 +18,6 @@ public class LinearSet extends FuzzySet {
 		this.rightOffset = rightOffset;
 	}
 
-
 	@Override
 	public float calculateValue(float val) {
 		if(val >= (peakPoint - leftOffset) && val <= peakPoint + rightOffset) {
