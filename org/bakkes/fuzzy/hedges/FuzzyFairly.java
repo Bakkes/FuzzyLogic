@@ -1,7 +1,7 @@
 package org.bakkes.fuzzy.hedges;
 
-import org.bakkes.fuzzy.AFuzzySet;
 import org.bakkes.fuzzy.AFuzzyTerm;
+import org.bakkes.fuzzy.sets.AFuzzySet;
 
 public class FuzzyFairly extends AFuzzyTerm {
 
