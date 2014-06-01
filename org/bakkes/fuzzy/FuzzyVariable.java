@@ -26,13 +26,29 @@ public class FuzzyVariable {
 	}
 	
 	public void fuzzify(float x){
-		List<AFuzzySet> list = new LinkedList<>(sets);
-		ListIterator<AFuzzySet> it = list.listIterator();
-		while(it.hasNext()){
-			AFuzzySet set = it.next();
-			if(set.getValue() > x){
-				
+
+
+		// we want to find the 2 sets that are just bigger or smaller then the x
+		AFuzzySet bigger = null;
+		AFuzzySet smaller = null;
+
+		for(AFuzzySet set : sets){
+			smaller = bigger;
+			bigger = set;
+			if(bigger.getValue() > x){
+				// found it
+				break;
 			}
+		}
+		
+		// these are the shoulder checks
+		if(smaller == null){
+			bigger.setValue(100);
+			return;
+		}
+		if(bigger == null){
+			smaller.setValue(100);
+			return;
 		}
 	}
 	
