@@ -11,7 +11,7 @@ import org.bakkes.fuzzy.IFuzzyTerm;
  */
 public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 	private String name;
-
+	
 	public String getName() {
 		return name;
 	}
@@ -19,6 +19,7 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	@Override
 	public boolean equals(Object to){
 		if(! (to instanceof AFuzzySet)){
@@ -36,8 +37,6 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 		return new Float(getValue() /3).hashCode();
 	}
 	
-	// determins the range of the set (based on the neighbours ranges)
 	public abstract float getPoint();
-	// sets the dom
 	public abstract void setValue(float x);
 }
