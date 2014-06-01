@@ -30,4 +30,8 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 		}
 		return true;
 	}
+	@Override
+	public int hashCode(){
+		return new Float(getName().hashCode() * getValue() /3).hashCode();
+	}
 }
