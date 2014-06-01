@@ -29,4 +29,14 @@ public class LinearSet extends AFuzzySet {
 		value = x;
 	}
 
+	@Override
+	public void clearValue() {
+		setValue(0);
+	}
+
+	@Override
+	public void ORwithValue(float value) {
+		setValue(getValue()+value);
+	}
+
 }
