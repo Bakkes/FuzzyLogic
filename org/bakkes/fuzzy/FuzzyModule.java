@@ -30,11 +30,25 @@ public class FuzzyModule {
 		rules.add(new FuzzyRule(condition, consequence));
 	}
 	
-	public void fuzzify(String flv, double value) {
-		
+	public void fuzzify(String flv, float value) {
+		assert !variables.containsKey(flv) : "FLV does not exist"; 
+		variables.get(flv).fuzzify(value);
 	}
 	
-	public double deFuzzify(String key, DefuzzifyType method) {
+	public float deFuzzify(String flv, DefuzzifyType method) {
+		assert !variables.containsKey(flv) : "FLV does not exist"; 
+		
+		resetConfidences();
+		for(FuzzyRule rule : rules) {
+			rule.calculate();
+		}
+		
+		switch(method) {
+		case MAX_AV:
+			break;
+		case CENTROID:
+			break;
+		}
 		return 0;
 	}
 }
