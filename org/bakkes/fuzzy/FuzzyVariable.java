@@ -2,6 +2,8 @@ package org.bakkes.fuzzy;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
@@ -22,11 +24,8 @@ public class FuzzyVariable {
 		sets.add(set);
 	}
 	
-	public Map<String, Float> fuzzify(float x){
-		Map<String, Float> result = new HashMap<>();
-
-
-		return result;
+	public void fuzzify(float x){
+		List<AFuzzySet> list = new LinkedList<>(sets);
 	}
 	
 	public float deFuzzifyCentroid(int numSamples) {

@@ -22,9 +22,7 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 			return false;
 		}
 		AFuzzySet target = (AFuzzySet) to;
-		if(!target.getName().equals(getName())){
-			return false;
-		}
+
 		if(!(target.getValue() == getValue())){
 			return false;
 		}
@@ -32,6 +30,6 @@ public abstract class AFuzzySet extends AFuzzyTerm implements IFuzzyTerm{
 	}
 	@Override
 	public int hashCode(){
-		return new Float(getName().hashCode() * getValue() /3).hashCode();
+		return new Float(getValue() /3).hashCode();
 	}
 }
