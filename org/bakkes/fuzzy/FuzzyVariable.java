@@ -1,63 +1,30 @@
 package org.bakkes.fuzzy;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
-import java.util.TreeSet;
 
 import org.bakkes.fuzzy.sets.IFuzzySet;
-import org.bakkes.fuzzy.sets.LinearSet;
-
 
 public class FuzzyVariable {
 
-	Collection<IFuzzySet> sets;
+	Map<String, IFuzzySet> memberSets;
+	float min;
+	float max;
 	public FuzzyVariable(){
-		// saves memory and no index acces is required
-		sets = new TreeSet<>();
+		memberSets = new HashMap<>();
+		min =0;
+		max =0;
 	}
-	
-	public void addSet(String name, float value){
-
-	}
-	
-	public void fuzzify(float x){
-
-
-		// we want to find the 2 sets that are just bigger or smaller then the x
-		IFuzzySet bigger = null;
-		IFuzzySet smaller = null;
-
-		for(IFuzzySet set : sets){
-			smaller = bigger;
-			bigger = set;
-			if(bigger.getValue() > x){
-				// found it
-				break;
-			}
+	void addSet(String name, IFuzzySet set){
+		memberSets.put(name, set);
+		if(min > set.getMin()){
+			min = set.getMin();
 		}
-		
-		// these are the shoulder checks
-		if(smaller == null){
-			bigger.setValue(100);
-			return;
+		if(max < set.getMax()){
+			max = set.getMax();
 		}
-		if(bigger == null){
-			smaller.setValue(100);
-			return;
-		}
-	}
-	
-	public float deFuzzifyCentroid(int numSamples) {
 
-		return 0f;
 	}
 	
-	public float deFuzzifyMaxAv() {
-		return 0f;
-	}
 
 }

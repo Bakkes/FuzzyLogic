@@ -3,16 +3,16 @@ package org.bakkes.fuzzy.sets;
 public abstract class AFuzzySet implements IFuzzySet{
 
 	protected float peakPoint;
-	protected float leftOffset;
-	protected float rightOffset;
+	protected float minOffset;
+	protected float maxOffset;
 
 	protected float value;
 	
-	public AFuzzySet(float peak, float leftOffset, float rightOffset) {
+	public AFuzzySet(float peak, float minOffset, float maxOffset) {
 		clearValue();
 		this.peakPoint = peak;
-		this.leftOffset = leftOffset;
-		this.rightOffset = rightOffset;
+		this.minOffset = minOffset;
+		this.maxOffset = maxOffset;
 	}
 
 	@Override
@@ -33,5 +33,23 @@ public abstract class AFuzzySet implements IFuzzySet{
 		if(getValue() < value){
 			setValue(value);
 		}
+	}
+	@Override
+	public float getPeak() {
+		return peakPoint;
+	}
+
+
+	@Override
+	public float getMin() {
+		// TODO Auto-generated method stub
+		return minOffset;
+	}
+
+
+	@Override
+	public float getMax() {
+		// TODO Auto-generated method stub
+		return maxOffset;
 	}
 }

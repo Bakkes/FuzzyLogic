@@ -11,4 +11,7 @@ import org.bakkes.fuzzy.IFuzzyTerm;
 public interface IFuzzySet extends IFuzzyTerm{
 	public float calculateValue(float val);
 	public void setValue(float val);
+	public float getPeak();
+	public float getMin();
+	public float getMax();
 }

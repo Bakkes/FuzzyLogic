@@ -4,26 +4,28 @@ import org.bakkes.fuzzy.FloatHelper;
 
 public class LeftShoulder extends AFuzzySet {
 	
-	public LeftShoulder(float peak, float leftOffset, float rightOffset) {
-		super(peak,leftOffset,rightOffset);
+	public LeftShoulder(float peak, float minOffset, float maxOffset) {
+		super(peak,minOffset,maxOffset);
 	}
 
 
 	@Override
 	public float calculateValue(float val) {
-		if((FloatHelper.areEqual(leftOffset, 0.0f) &&
+		if((FloatHelper.areEqual(minOffset, 0.0f) &&
 				FloatHelper.areEqual(peakPoint, val)) ||
-				(FloatHelper.areEqual(rightOffset, 0.0f) &&
+				(FloatHelper.areEqual(maxOffset, 0.0f) &&
 				FloatHelper.areEqual(peakPoint, val))) {
 			return 1.0f;
-		} else if(val >= peakPoint && val < (peakPoint + rightOffset)) {
-			float grad = 1.0f / -rightOffset;
+		} else if(val >= peakPoint && val < (peakPoint + maxOffset)) {
+			float grad = 1.0f / -maxOffset;
 			return grad * (val - peakPoint) + 1.0f;
-		} else if(val < peakPoint && val >= (peakPoint - leftOffset)) {
+		} else if(val < peakPoint && val >= (peakPoint - minOffset)) {
 			return 1.0f;
 		} else {
 			return 0.0f;
 		}
 		
 	}
+
+
 }

@@ -7,13 +7,13 @@ package org.bakkes.fuzzy.sets;
  */
 public class LinearSet extends AFuzzySet {
 
-	public LinearSet(float peak, float leftOffset, float rightOffset) {
-		super(peak,leftOffset,rightOffset);
+	public LinearSet(float peak, float minOffset, float maxOffset) {
+		super(peak,minOffset,maxOffset);
 	}
 
 	@Override
 	public float calculateValue(float val) {
-		if(val >= (peakPoint - leftOffset) && val <= peakPoint + rightOffset) {
+		if(val >= (peakPoint - minOffset) && val <= peakPoint + maxOffset) {
 			return 1.0f;
 		} else {
 			return 0f;
