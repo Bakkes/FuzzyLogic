@@ -1,5 +1,6 @@
 package org.bakkes.fuzzy;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -20,12 +21,12 @@ public class FuzzyModule {
 		
 	}
 	
-	public FuzzyVariable CreateFLV(String name) {
-		//TODO: Implement
-		return null;
+	public FuzzyVariable createFLV(String name) {
+		variables.put(name, new FuzzyVariable());
+		return variables.get(name);
 	}
 	
-	public void AddRule(AFuzzyTerm condition, AFuzzyTerm consequence) {
+	public void addRule(AFuzzyTerm condition, AFuzzyTerm consequence) {
 		rules.add(new FuzzyRule(condition, consequence));
 	}
 	
