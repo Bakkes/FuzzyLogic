@@ -17,8 +17,10 @@ public class FuzzyModule {
 		rules = new ArrayList<FuzzyRule>();
 	}
 	
-	private void resetConfidences() {
-		
+	private void resetConfidencesOfConsequence() {
+		for(FuzzyRule rule : rules) {
+			rule.resetConfidenceOfConsequence();
+		}
 	}
 	
 	public FuzzyVariable createFLV(String name) {
@@ -38,16 +40,16 @@ public class FuzzyModule {
 	public float deFuzzify(String flv, DefuzzifyType method) {
 		assert !variables.containsKey(flv) : "FLV does not exist"; 
 		
-		resetConfidences();
+		resetConfidencesOfConsequence();
 		for(FuzzyRule rule : rules) {
 			rule.calculate();
 		}
 		
 		switch(method) {
 		case MAX_AV:
-			break;
+			return variables.get(flv).deFuzzifyMaxAv();
 		case CENTROID:
-			break;
+			return variables.get(flv).deFuzzifyCentroid(CENTROID_SAMPLES);
 		}
 		return 0;
 	}
