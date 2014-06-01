@@ -18,7 +18,9 @@ public class FuzzyModule {
 	}
 	
 	private void resetConfidences() {
-		
+		for(FuzzyRule rule : rules) {
+			rule.resetConfidence();
+		}
 	}
 	
 	public FuzzyVariable createFLV(String name) {
@@ -45,9 +47,9 @@ public class FuzzyModule {
 		
 		switch(method) {
 		case MAX_AV:
-			break;
+			return variables.get(flv).deFuzzifyMaxAv();
 		case CENTROID:
-			break;
+			return variables.get(flv).deFuzzifyCentroid(CENTROID_SAMPLES);
 		}
 		return 0;
 	}
