@@ -1,6 +1,6 @@
 package org.bakkes.fuzzy;
 
-public class AndOperator implements IOperator{
+public class AndOperator extends AFuzzyTerm implements IOperator{
 
 	float value = 0;
 	@Override
