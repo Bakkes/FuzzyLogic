@@ -1,6 +1,6 @@
 package org.bakkes.fuzzy.sets;
 
-public class FuzzySet extends AFuzzySet {
+public abstract class FuzzySet extends AFuzzySet {
 	private float value;
 	private float point;
 	
