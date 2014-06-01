@@ -1,15 +1,32 @@
 package org.bakkes.fuzzy;
 
+/**
+ * the range of this set is determined by the point of the other sets in fuzzy var
+ * @author jappie
+ *
+ */
 public class LinearSet extends AFuzzySet {
 
 	private float value;
-	public LinearSet(float val){
-		value = val;
+	private float point;
+	public LinearSet(float pnt){
+		value = 0;
+		point = pnt;
 	}
+
 	@Override
 	public float getValue() {
-		// TODO Auto-generated method stub
 		return value;
+	}
+
+	@Override
+	public float getPoint() {
+		return point;
+	}
+
+	@Override
+	public void setValue(float x) {
+		value = x;
 	}
 
 }
