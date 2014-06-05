@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.bakkes.fuzzy.sets.IFuzzySet;
+import org.bakkes.fuzzy.sets.LeftShoulder;
+import org.bakkes.fuzzy.sets.RightShoulder;
+import org.bakkes.fuzzy.sets.Triangle;
 
 public class FuzzyVariable {
 
@@ -67,5 +70,22 @@ public class FuzzyVariable {
 		return sumOfMoments/totalArea;
 	}
 	
-
+	public IFuzzySet addTriangularSet(String name, float min, float peak, float max) {
+		IFuzzySet set = new Triangle(peak, peak - min, max - peak);
+		addSet(name, set);
+		return set;
+	}
+	
+	public IFuzzySet addLeftShoulderSet(String name, float min, float peak, float max) {
+		IFuzzySet set = new LeftShoulder(peak, peak - min, max - peak);
+		addSet(name, set);
+		return set;
+	}
+	
+	public IFuzzySet addRightShoulderSet(String name, float min, float peak, float max) {
+		IFuzzySet set = new RightShoulder(peak, peak - min, max - peak);
+		addSet(name, set);
+		return set;
+	}
+	
 }
